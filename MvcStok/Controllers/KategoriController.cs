@@ -16,6 +16,7 @@ namespace MvcStok.Controllers
             var degerler = db.Kategoriler.ToList();
             return View(degerler);
         }
+
         [HttpGet]
         public ActionResult YeniKategori()
         {
@@ -23,13 +24,14 @@ namespace MvcStok.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult YeniKategori(Kategoriler p)
         {
             //eger butona tiklarsam o zaman assagida ki islemi uygula
             db.Kategoriler.Add(p);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
