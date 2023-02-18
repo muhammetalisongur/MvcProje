@@ -13,6 +13,8 @@
         <th>Kategori</th>
         <th>Fiyat</th>
         <th>Stok</th>
+        <th>Sil</th>
+        <th>Guncelle</th>
     </tr>
     
     <tbody>
@@ -25,6 +27,8 @@
                 <td>@item.Kategoriler.KategoriAD</td>
                 <td>@item.Fiyat</td>
                 <td>@item.Stok</td>
+                <td><a href="/Urun/Sil/@item.UrunID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Urun/Guncelle/@item.UrunID" class="btn btn-warning">Guncelle</a></td>
             </tr>
         }
     </tbody>
