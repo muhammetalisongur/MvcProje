@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcStok.Models.Entity.Urunler
 @{
     ViewBag.Title = "UrunEkle";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -15,7 +15,7 @@
     </div>
     <div>
         <label>Urun Kategori</label>
-        <input type="text" class="form-control" name="UrunKategori" />
+        @Html.DropDownListFor(x => x.Kategoriler.KategoriID, (List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
     </div>
     <div>
         <label>Fiyat</label>

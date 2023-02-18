@@ -1,4 +1,5 @@
-﻿using MvcStok.Models.Entity;
+﻿using Microsoft.Ajax.Utilities;
+using MvcStok.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,16 +26,27 @@ namespace MvcStok.Controllers
                                                  Text = i.KategoriAD,
                                                  Value = i.KategoriID.ToString(),
                                              }).ToList();
+            ViewBag.dgr = degerler;
             return View();
         }
 
         [HttpPost]
         public ActionResult UrunEkle(Urunler p)
         {
+            var ktg = db.Kategoriler.Where(x => x.KategoriID == p.Kategoriler.KategoriID).FirstOrDefault();
+            p.Kategoriler = ktg;
             db.Urunler.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
 
+        }
+        public ActionResult Sil(int id)
+        {
+            var urun = db.Urunler.Find(id);
+            db.Urunler.Remove(urun);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
