@@ -5,17 +5,18 @@
 }
 
 @using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
-            {
-                <div>
-                    @Html.LabelFor(x => x.MusteriID, "Musteri ID");
-                    @Html.TextBoxFor(x => x.MusteriID, new { @class = "form-control" });
-                    <br />
-                    @Html.LabelFor(x => x.MusteriAd, "Musteri Ad");
-                    @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" });
-                    <br />
-                    @Html.LabelFor(x => x.MusteriSoyad, "Musteri Soyad");
-                    @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "form-control" });
-                    <br />
-                </div>
-            }
+{
+    <div>
+        @Html.LabelFor(x => x.MusteriID, "Musteri ID")
+        @Html.TextBoxFor(x => x.MusteriID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MusteriAd, "Musteri Ad")
+        @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.MusteriSoyad, "Musteri Soyad")
+        @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Musteriyi Guncelle</button>
+    </div>
+}
 
