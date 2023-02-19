@@ -2,7 +2,10 @@
 
 Murat Yücedağın 50 derste Mvc dersinden alınmış notlar ve kişileştirilmiş eklemeleri içerir.
 Derse ulaşmak için [tıklayınız](https://www.youtube.com/playlist?list=PLKnjBHu2xXNNRPqfdZC6hNmJKOqIIpqNj "tıklayınız").
+</br>
+</br>
 
+Projede db first yaklaşımı benimsenmiş ve adonet model ile veri tabanı bağlantısı yapılmıştır.
 
 ## İçerik
 Mvc Proje
