@@ -27,6 +27,7 @@ namespace MvcStok.Controllers
                                                  Value = i.KategoriID.ToString(),
                                              }).ToList();
             ViewBag.dgr = degerler;
+
             return View();
         }
 
@@ -38,7 +39,6 @@ namespace MvcStok.Controllers
             db.Urunler.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");
-
         }
         public ActionResult Sil(int id)
         {
@@ -46,6 +46,32 @@ namespace MvcStok.Controllers
             db.Urunler.Remove(urun);
             db.SaveChanges();
 
+            return RedirectToAction("Index");
+        }
+        public ActionResult UrunGetir(int id)
+        {
+            var urun = db.Urunler.Find(id);
+
+            List<SelectListItem> degerler = (from i in db.Kategoriler.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KategoriAD,
+                                                 Value = i.KategoriID.ToString()
+                                             }).ToList();
+            ViewBag.dgr = degerler;
+
+            return View("UrunGetir", urun);
+        }
+        public ActionResult Guncelle(Urunler p)
+        {
+            var urun = db.Urunler.Find(p.UrunID);
+            urun.UrunAd = p.UrunAd;
+            urun.Marka = p.Marka;
+            urun.Stok = p.Stok;
+            urun.Fiyat = p.Fiyat;
+            var ktg = db.Kategoriler.Where(x => x.KategoriID == p.Kategoriler.KategoriID).FirstOrDefault();
+            urun.UrunKategori = ktg.KategoriID;
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
     }

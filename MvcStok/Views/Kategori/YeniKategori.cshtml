@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcStok.Models.Entity.Kategoriler
 @{
     ViewBag.Title = "YeniKategori";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -8,6 +8,7 @@
     <div>
         <label>Kategori Adi</label>
         <input type="text" class="form-control" name="KategoriAD" />
+        @Html.ValidationMessageFor(x => x.KategoriAD, "", new { @class = "text-danger" })
     </div>
     <div style="margin-top:15px">
         <button class="btn btn-info">Kategori Ekle</button>

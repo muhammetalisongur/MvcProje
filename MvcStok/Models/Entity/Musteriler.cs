@@ -11,7 +11,8 @@ namespace MvcStok.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Musteriler
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,13 @@ namespace MvcStok.Models.Entity
         {
             this.Satislar = new HashSet<Satislar>();
         }
-    
+
         public int MusteriID { get; set; }
+        [Required(ErrorMessage = "Musteri adini bos gecemezsiniz!")]
+        [StringLength(50,ErrorMessage = "En fazla 50 karekter girebilirsiniz")]
         public string MusteriAd { get; set; }
-        public string MusteriSoyad { get; set; }
-    
+        [Required(ErrorMessage = "Musteri soyadini bos gecemezsiniz")] public string MusteriSoyad { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Satislar> Satislar { get; set; }
     }

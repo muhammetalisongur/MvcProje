@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcStok.Models.Entity.Musteriler
 @{
     ViewBag.Title = "YeniMusteri";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -7,14 +7,19 @@
     <div>
         <label>Musteri Ad:</label>
         <input type="text" class="form-control" name="MusteriAd" />
+        @Html.ValidationMessageFor(x => x.MusteriAd, "", new { @class = "text-danger" })
     </div>
     <div>
         <label>Musteri Soyad:</label>
         <input type="text" class="form-control" name="MusteriSoyad" />
+        @Html.ValidationMessageFor(x => x.MusteriSoyad, "", new { @class = "text-danger" })
     </div>
     <div style="margin-top:15px">
-        <button class="btn btn-success">Musteri Ekle</button>
+        <button class="btn btn-success" id="btn1">Musteri Ekle</button>
     </div>
+    <script>
+        $('#btn1').click(function () { alert("Musteri Ekleme Islemi Yapildi...!")})
+    </script>
 
 </form>
 <a hre></a>

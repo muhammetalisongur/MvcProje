@@ -11,7 +11,8 @@ namespace MvcStok.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Urunler
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +20,14 @@ namespace MvcStok.Models.Entity
         {
             this.Satislar = new HashSet<Satislar>();
         }
-    
+
         public int UrunID { get; set; }
-        public string UrunAd { get; set; }
-        public string Marka { get; set; }
-        public Nullable<short> UrunKategori { get; set; }
-        public Nullable<decimal> Fiyat { get; set; }
-        public Nullable<byte> Stok { get; set; }
-    
+        [Required(ErrorMessage = "Urun adini bos gecemezsiniz!")] public string UrunAd { get; set; }
+        [Required(ErrorMessage = "Urun markasini bos gecemezsiniz!")] public string Marka { get; set; }
+         public Nullable<short> UrunKategori { get; set; }
+        [Required(ErrorMessage = "Urun fiyatini bos gecemezsiniz!")] public Nullable<decimal> Fiyat { get; set; }
+        [Required(ErrorMessage = "Urun stok bilgisini bos gecemezsiniz!")] public Nullable<byte> Stok { get; set; }
+
         public virtual Kategoriler Kategoriler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Satislar> Satislar { get; set; }

@@ -81,3 +81,7 @@ C:\Users\MAS\source\repos\MvcStok\MvcStok\obj\Debug\MvcStok.csproj.CoreCompileIn
 C:\Users\MAS\source\repos\MvcStok\MvcStok\obj\Debug\MvcStok.csproj.CopyComplete
 C:\Users\MAS\source\repos\MvcStok\MvcStok\obj\Debug\MvcStok.dll
 C:\Users\MAS\source\repos\MvcStok\MvcStok\obj\Debug\MvcStok.pdb
+C:\Users\MAS\source\repos\MvcStok\MvcStok\bin\PagedList.dll
+C:\Users\MAS\source\repos\MvcStok\MvcStok\bin\PagedList.Mvc.dll
+C:\Users\MAS\source\repos\MvcStok\MvcStok\bin\PagedList.xml
+C:\Users\MAS\source\repos\MvcStok\MvcStok\bin\PagedList.Mvc.xml

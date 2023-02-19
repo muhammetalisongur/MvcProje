@@ -7,23 +7,31 @@
 <form class="form-group" method="post">
     <div>
         <label>Urun Ad</label>
-        <input type="text" class="form-control" name="UrunAd" />
+        <input type="text" class="form-control" name="UrunAd" required
+               oninvalid="this.setCustomValidity('Urun adini bos gecemezsiniz')"
+               oninput="this.setCustomValidity('')" />
     </div>
     <div>
         <label>Marka</label>
-        <input type="text" class="form-control" name="Marka" />
+        <input type="text" class="form-control" name="Marka" required
+               oninvalid="this.setCustomValidity('Urun markasini bos gecemezsiniz')"
+               oninput="this.setCustomValidity('')" />
     </div>
     <div>
         <label>Urun Kategori</label>
-        @Html.DropDownListFor(x => x.Kategoriler.KategoriID, (List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
+        @Html.DropDownListFor(x => x.Kategoriler.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
     </div>
     <div>
         <label>Fiyat</label>
-        <input type="text" class="form-control" name="Fiyat" />
+        <input type="text" class="form-control" name="Fiyat" required
+               oninvalid="this.setCustomValidity('Urun fiyatini bos gecemezsiniz')"
+               oninput="this.setCustomValidity('')" />
     </div>
     <div>
         <label>Stok</label>
-        <input type="text" class="form-control" name="Stok" />
+        <input type="text" class="form-control" name="Stok" required
+               oninvalid="this.setCustomValidity('Urun stok bilgisini gecemezsiniz')"
+               oninput="this.setCustomValidity('')" />
     </div>
     <div style="margin-top:15px">
         <button class="btn btn-info">Urun Ekle</button>
