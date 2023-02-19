@@ -5,18 +5,19 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>Urun ID</th>
-        <th>Urun Adi</th>
-        <th>Markasi</th>
-        <th>Kategori</th>
-        <th>Fiyat</th>
-        <th>Stok</th>
-        <th>Sil</th>
-        <th>Guncelle</th>
-    </tr>
-    
+<table id="tbl" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Urun ID</th>
+            <th>Urun Adi</th>
+            <th>Markasi</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Sil</th>
+            <th>Guncelle</th>
+        </tr>
+    </thead>
     <tbody>
         @foreach (var item in Model)
         {
@@ -35,3 +36,18 @@
 
 </table>
 <a href="/Urun/UrunEkle" class="btn btn-success">Yeni Urun Ekle</a>
+
+@*DataTable: https://datatables.net/*@
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+        $('#tbl').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.13.2/i18n/tr.json"
+            }
+        });
+    });
+</script>
