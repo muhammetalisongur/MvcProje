@@ -18,9 +18,7 @@ namespace MvcStok.Controllers
             {
                 degerler = degerler.Where(x => x.MusteriAd.Contains(p));
             }
-            return View(degerler.ToList());
-            //var degerler = db.Musteriler.ToList();
-            //return View(degerler);
+            return View(degerler.ToList());           
         }
 
         [HttpGet]
@@ -52,6 +50,11 @@ namespace MvcStok.Controllers
         }
         public ActionResult MusteriGetir(int id)
         {
+            if (!ModelState.IsValid)
+            {
+
+                return View("MusteriGetir");
+            }
             var musteri = db.Musteriler.Find(id);
             return View("MusteriGetir", musteri);
 
