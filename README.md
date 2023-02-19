@@ -5,7 +5,7 @@ Derse ulaşmak için [tıklayınız](https://www.youtube.com/playlist?list=PLKnj
 </br>
 </br>
 
-Projede db first yaklaşımı benimsenmiş ve adonet model ile veri tabanı bağlantısı yapılmıştır.
+Projede Database First yaklaşımı benimsenmiş ve AdoNet model ile veri tabanı bağlantısı yapılmıştır.
 
 ## İçerik
 Mvc Proje
